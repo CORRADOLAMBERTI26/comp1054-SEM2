@@ -1,4 +1,4 @@
-/* CSS RESET + BOX SIZING */
+/* Reset default browser spacing and use consistent box sizing */
 
 *,
 *::before,
@@ -8,20 +8,22 @@
     padding: 0;
 }
 
-/* ROOT TYPOGRAPHY */
+/* Base font sizing */
 
 html {
     font-size: 100%;
 }
 
+/* Body styling including main font, background colour, and text colour */
+
 body {
     font-family: "Source Serif 4", serif;
-    background-color: #0b0b0b;
+    background-color: #0b0b0b; /* Dark background to match AM album aesthetic */
     color: #ffffff;
     line-height: 1.6;
 }
 
-/* LAYOUT USING GRID */
+/* Using CSS Grid to structure header, content, and footer */
 
 body {
     display: grid;
@@ -29,13 +31,15 @@ body {
     min-height: 100vh;
 }
 
-/* HEADER */
+/* Header styling including center alignment and bottom divider */
 
 header {
     text-align: center;
     padding: 3rem 1rem;
     border-bottom: 2px solid #ffffff;
 }
+
+/* Song title styling using heading font */
 
 h1 {
     font-family: "Oswald", sans-serif;
@@ -44,7 +48,7 @@ h1 {
     text-transform: uppercase;
 }
 
-/* IMAGE */
+/* Album image styling to keep it responsive and centered */
 
 header img {
     display: block;
@@ -54,12 +58,14 @@ header img {
     height: auto;
 }
 
+/* Artist text styling using lighter colour for contrast */
+
 header p {
     color: #bfbfbf;
     margin-top: 0.5rem;
 }
 
-/* MAIN CONTENT */
+/* Main layout centers content on page */
 
 main {
     display: grid;
@@ -67,15 +73,19 @@ main {
     padding: 2rem;
 }
 
+/* Limits article width for better readability */
+
 article {
     max-width: 700px;
 }
 
-/* SECTIONS */
+/* Adds spacing between content sections */
 
 section {
     margin-bottom: 3rem;
 }
+
+/* Section headings styling */
 
 h2 {
     font-family: "Oswald", sans-serif;
@@ -85,7 +95,7 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-/* LYRICS */
+/* Lyrics styling */
 
 section:last-of-type p {
     margin-bottom: 1rem;
@@ -93,7 +103,7 @@ section:last-of-type p {
     font-style: italic;
 }
 
-/* FOOTER */
+/* Footer styling */
 
 footer {
     text-align: center;
@@ -103,13 +113,13 @@ footer {
     color: #bfbfbf;
 }
 
-/* HOVER */
+/* Hover effect for links */
 
 a:hover {
     text-decoration: underline;
 }
 
-/* RESPONSIVE */
+/* Responsive design adjustments for smaller screens */
 
 @media (max-width: 600px) {
     h1 {
