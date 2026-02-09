@@ -1,0 +1,122 @@
+/* CSS RESET + BOX SIZING */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ROOT TYPOGRAPHY */
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Source Serif 4", serif;
+    background-color: #0b0b0b;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* LAYOUT USING GRID */
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    border-bottom: 2px solid #ffffff;
+}
+
+h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+/* IMAGE */
+
+header img {
+    display: block;
+    margin: 1.5rem auto 1rem;
+    max-width: 600px;
+    width: 90%;
+    height: auto;
+}
+
+header p {
+    color: #bfbfbf;
+    margin-top: 0.5rem;
+}
+
+/* MAIN CONTENT */
+
+main {
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+}
+
+article {
+    max-width: 700px;
+}
+
+/* SECTIONS */
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 0.5rem;
+}
+
+/* LYRICS */
+
+section:last-of-type p {
+    margin-bottom: 1rem;
+    white-space: pre-line;
+    font-style: italic;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid #ffffff;
+    font-size: 0.9rem;
+    color: #bfbfbf;
+}
+
+/* HOVER */
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    article {
+        width: 90%;
+    }
+}
