@@ -16,3 +16,52 @@ html {
 	width: 80%;
 	margin: 0 auto;
 }
+
+/*tab panel*/
+
+/*Remove default list styling*/
+.tabs ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	border-bottom: 2px solid #ccc;
+}
+
+/* Each tab*/
+.tabs li {
+	margin-right: 5px;
+}
+
+/*tab links*/
+.tabs a {
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	background: #eee;
+	color: #000;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	border-radius: 5px 5px 0 0;
+}
+
+/*Active tab*/
+.tabs a.active {
+	background: #fff;
+	font-weight: bold;
+}
+
+/* Tab panels*/
+[role="tabpanel"] {
+	display: none;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-top: none;
+	background: #fff;
+}
+
+/*Show active panel*/
+[role="tabpanel"].active {
+	display: block;
+}
+
+
