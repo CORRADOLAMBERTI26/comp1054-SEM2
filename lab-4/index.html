@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NHL Atlantic Division Standings</title>
+
+  <style>
+    /*basic reset so things look consistent */
+    * {
+      box-sizing: border-box;
+    }
+
+    /*Page background + general font setup */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1d3144;
+      color: #1f2937;
+      padding: 30px;
+    }
+
+    /*main container to center everything nicely */
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    /*Main Title */
+    h1 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 2rem;
+      color: #0f172a;
+    }
+
+    /*Little text/description under title */
+    p {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #475569;
+    }
+
+    /* allows horizontal scroll if the screen is too small */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    /* Table layout stuff */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 850px;
+    }
+
+    /* header row styling */
+    thead {
+      background: #042a52;
+      color: #ffffff;
+    }
+
+    /*spacing and Borders for all cells */
+    th,
+    td {
+      padding: 12px 14px;
+      text-align: center;
+      border-bottom: 1px solid #dbe2ea;
+    }
+
+    /*Make headers clickable for sorting */
+    th {
+      cursor: pointer;
+      user-select: none;
+      font-size: 1.0rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* align team names and rank to the left */
+    th:first-child,
+    td:first-child,
+    th:nth-child(2),
+    td:nth-child(2) {
+      text-align: left;
+    }
+
+    /* zebra striping for readability */
+    tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    /* Hover effect when you move your mouse over rows */
+    tbody tr:hover {
+      background: #eaf3ff;
+    }
+
+    /* GREEN for positive goal differential */
+    .positive {
+      color: #009e3a;
+      font-weight: bold;
+    }
+
+    /*RED for negative goal differential */
+    .negative {
+      color: #e60808;
+      font-weight: bold;
+    }
+
+    /*The caption above table*/
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: bold;
+      font-size: 1.0rem;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    /* The note under the table */
+    .note {
+      margin-top: 14px;
+      font-size: 1.0rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>NHL Atlantic Division Standings</h1>
+    <p>Sortable standings table for the Atlantic Division</p>
+
+    <div class="table-container">
+      <!-- Table stuff -->
+      <table id="standings">
+        <caption>2025-26 NHL Atlantic Division</caption>
+
+        <!--Table headers  -->
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Team</th>
+            <th>GP</th>
+            <th>W</th>
+            <th>L</th>
+            <th>OTL</th>
+            <th>RW</th>
+            <th>GF</th>
+            <th>GA</th>
+            <th>GD</th>
+            <th>PTS</th>
+          </tr>
+        </thead>
+
+        <!-- table body with team data -->
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Buffalo Sabres</td>
+            <td>75</td>
+            <td>46</td>
+            <td>21</td>
+            <td>8</td>
+            <td>38</td>
+            <td>263</td>
+            <td>221</td>
+            <td class="positive">+42</td>
+            <td>100</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Tampa Bay Lightning</td>
+            <td>74</td>
+            <td>46</td>
+            <td>22</td>
+            <td>6</td>
+            <td>37</td>
+            <td>267</td>
+            <td>203</td>
+            <td class="positive">+64</td>
+            <td>98</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Montreal Canadiens</td>
+            <td>74</td>
+            <td>43</td>
+            <td>21</td>
+            <td>10</td>
+            <td>31</td>
+            <td>262</td>
+            <td>234</td>
+            <td class="positive">+28</td>
+            <td>96</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Boston Bruins</td>
+            <td>75</td>
+            <td>43</td>
+            <td>24</td>
+            <td>8</td>
+            <td>31</td>
+            <td>256</td>
+            <td>233</td>
+            <td class="positive">+23</td>
+            <td>94</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>Ottawa Senators</td>
+            <td>74</td>
+            <td>38</td>
+            <td>26</td>
+            <td>10</td>
+            <td>32</td>
+            <td>247</td>
+            <td>230</td>
+            <td class="positive">+17</td>
+            <td>86</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>Detroit Red Wings</td>
+            <td>74</td>
+            <td>39</td>
+            <td>27</td>
+            <td>8</td>
+            <td>28</td>
+            <td>216</td>
+            <td>223</td>
+            <td class="negative">-7</td>
+            <td>86</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Toronto Maple Leafs</td>
+            <td>75</td>
+            <td>32</td>
+            <td>30</td>
+            <td>13</td>
+            <td>23</td>
+            <td>235</td>
+            <td>264</td>
+            <td class="negative">-29</td>
+            <td>77</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td>Florida Panthers</td>
+            <td>74</td>
+            <td>36</td>
+            <td>35</td>
+            <td>3</td>
+            <td>28</td>
+            <td>222</td>
+            <td>247</td>
+            <td class="negative">-25</td>
+            <td>75</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--instruction for the user -->
+    <p class="note">
+      Click any column heading to sort the table.
+    </p>
+  </div>
+
+  <!-- Local tablesort file -->
+  <script src="js/tablesort.min.js"></script>
+
+  <script>
+    //Activates sorting on the table
+    new Tablesort(document.getElementById("standings"));
+  </script>
+</body>
+</html>
