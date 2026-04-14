@@ -1,0 +1,118 @@
+/* Normalize default browser styles */
+
+html {
+  /*Improve default line spacing */
+  line-height: 1.15;
+  /* Prevent font size adjustments on mobile */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /*Remove default browser margin */
+  margin: 0;
+}
+
+main {
+  /* Ensure main behaves as a block element */
+  display: block;
+}
+
+h1 {
+  /* Default heading size and spacing */
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  /* Fix box sizing for horizontal rules */
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  /*sdet consistent monospace font */
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  /*Remove gray background on active links */
+  background-color: transparent;
+}
+
+abbr[title] {
+  /* remove border and add dotted underline */
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  /* Ensure bold text displays correctly */
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  /*Monospace font for code elements */
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  /* Smaller text size */
+  font-size: 80%;
+}
+
+img {
+  /* Remove border around images */
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  /*Make form elements inherit page font */
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+input {
+  /* allow overflow for form controls */
+  overflow: visible;
+}
+
+button,
+select {
+  /* Prevent uppercase transformation */
+  text-transform: none;
+}
+
+fieldset {
+  /* Default spacing for fieldsets */
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  /* Fix legend layout inside fieldsets */
+  box-sizing: border-box;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[hidden] {
+  /* Hide elements with the hidden attribute */
+  display: none;
+}

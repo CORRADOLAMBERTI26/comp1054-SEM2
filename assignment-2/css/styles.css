@@ -1,0 +1,436 @@
+/* Apply consistent box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Default page styling */
+body {
+    margin: 0;
+    background: #e9e9e9;
+    color: #222;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
+
+/* Make images responsive */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*links inherit text color */
+a {
+    color: inherit;
+}
+
+/* Main centered page container */
+#container {
+    width: min(1100px, 94%);
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+}
+
+/* Header spacing */
+header {
+    margin-bottom: 1.5rem;
+}
+
+/* Remove default margins */
+header h1,
+header p,
+footer p,
+footer small {
+    margin: 0;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+
+/* Home Base page */
+
+/* :has() lets us target this specific page layout */
+body:has(main > article + article + aside + aside) header {
+    border-top: 1px solid #888;
+    padding-top: 0.75rem;
+}
+
+/*hoomeBase title styling */
+body:has(main > article + article + aside + aside) header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+    line-height: 1;
+    text-transform: lowercase;
+    letter-spacing: -0.06em;
+}
+
+/* Red "Home" text */
+body:has(main > article + article + aside + aside) header h1 em {
+    color: #c92a2a;
+    font-style: normal;
+}
+
+/* Region text under title */
+body:has(main > article + article + aside + aside) header p {
+    margin-top: 0.35rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/*Grid layout for the HomeBase articles */
+body:has(main > article + article + aside + aside) main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/*article images */
+body:has(main > article + article + aside + aside) article img {
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+/* article headings */
+body:has(main > article + article + aside + aside) article h2 {
+    margin: 0 0 0.75rem;
+    line-height: 1;
+}
+
+/*article title */
+body:has(main > article + article + aside + aside) article:first-of-type h2 {
+    color: #b9333b;
+    font-size: 2.6rem;
+}
+
+/*Second article title */
+body:has(main > article + article + aside + aside) article:nth-of-type(2) h2 {
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+/*Article paragraph styling */
+body:has(main > article + article + aside + aside) article p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/*Sidebar boxes */
+body:has(main > article + article + aside + aside) aside {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+}
+
+/*Snowshoe event text */
+body:has(main > article + article + aside + aside) aside:first-of-type p:first-child {
+    margin-top: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/*Snowshoe website link */
+body:has(main > article + article + aside + aside) aside:first-of-type a {
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+/*Caroling section title */
+body:has(main > article + article + aside + aside) aside:nth-of-type(2) h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+/*Theatre titles */
+body:has(main > article + article + aside + aside) aside:nth-of-type(2) h3 {
+    margin-bottom: 0.25rem;
+}
+
+/*Theatre list styling and spacing */
+body:has(main > article + article + aside + aside) aside:nth-of-type(2) ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+body:has(main > article + article + aside + aside) aside:nth-of-type(2) li {
+    margin-bottom: 1rem;
+}
+
+/*Highlighted text */
+body:has(main > article + article + aside + aside) mark {
+    background: #ece8d2;
+}
+
+/*Media query = layout changes for larger screens */
+@media (min-width: 850px) {
+
+    /* Desktop grid layout */
+    body:has(main > article + article + aside + aside) main {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "snowshoe dog"
+            "carol slopes";
+            gap: 1.75rem;
+        align-items: start;
+    }
+
+    /* Grid placement */
+    body:has(main > article + article + aside + aside) article:first-of-type {
+        grid-area: dog;
+    }
+
+    body:has(main > article + article + aside + aside) article:nth-of-type(2) {
+        grid-area: slopes;
+    }
+
+    body:has(main > article + article + aside + aside) aside:first-of-type {
+        grid-area: snowshoe;
+    }
+
+    body:has(main > article + article + aside + aside) aside:nth-of-type(2) {
+        grid-area: carol;
+    }
+}
+
+
+/*Road Well Travelled page */
+
+body:has(main > article:only-child) header h1 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: #c98b43;
+    letter-spacing: 0.04em;
+}
+
+body:has(main > article:only-child) article img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+body:has(main > article:only-child) article h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.45rem;
+}
+
+body:has(main > article:only-child) article h2:first-of-type {
+    font-size: 3.8rem;
+    line-height: 0.95;
+}
+
+body:has(main > article:only-child) article p:first-of-type {
+    font-size: 1.1rem;
+}
+
+body:has(main > article:only-child) q {
+    font-style: italic;
+}
+
+/*newspaper-style columns on desktop */
+@media (min-width: 900px) {
+    body:has(main > article:only-child) article {
+        column-count: 2;
+        column-gap: 2.25rem;
+    }
+
+    body:has(main > article:only-child) article img,
+    body:has(main > article:only-child) article h2:first-of-type,
+    body:has(main > article:only-child) article p:first-of-type {
+        column-span: all;
+    }
+}
+
+
+/*Woman's Day page */
+
+body:has(main > section) header p {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #333;
+}
+
+body:has(main > section) header h1 {
+    font-size: 6rem;
+    line-height: 0.9;
+    font-weight: 300;
+    color: #f26522;
+    letter-spacing: -0.05em;
+}
+
+/* Grid container for WD layout */
+body:has(main > section) main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+body:has(main > section) section h2 {
+    margin: 0 0 0.75rem;
+    padding-top: 0.35rem;
+    border-top: 6px solid #ccc;
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 400;
+    text-transform: lowercase;
+}
+
+body:has(main > section) section:nth-of-type(1) h2 {
+    border-top-color: #7cb342;
+}
+
+body:has(main > section) section:nth-of-type(2) h2 {
+    border-top-color: #e91e63;
+}
+
+body:has(main > section) section:nth-of-type(3) h2 {
+    border-top-color: #18b7cf;
+}
+
+body:has(main > section) section ol,
+body:has(main > section) aside ol {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+body:has(main > section) section li {
+    margin-bottom: 0.9rem;
+}
+
+body:has(main > section) section li h3 {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.15;
+}
+
+body:has(main > section) section li p {
+    margin: 0.15rem 0 0;
+}
+
+body:has(main > section) section:nth-of-type(1) li h3 {
+    color: #7cb342;
+}
+
+body:has(main > section) section:nth-of-type(2) li h3 {
+    color: #e91e63;
+}
+
+body:has(main > section) section:nth-of-type(3) li h3 {
+    color: #18b7cf;
+}
+
+body:has(main > section) section em {
+    font-style: italic;
+    color: #444;
+}
+
+body:has(main > section) aside:first-of-type {
+    border: 0;
+    padding: 0;
+    background: transparent;
+}
+
+body:has(main > section) aside:first-of-type figure {
+    margin: 0;
+}
+
+body:has(main > section) aside:first-of-type img {
+    width: 100%;
+}
+
+body:has(main > section) aside:first-of-type figcaption {
+    margin-top: 0.75rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+}
+
+body:has(main > section) aside:first-of-type figcaption p {
+    margin: 0;
+}
+
+body:has(main > section) aside:first-of-type figcaption p:first-child {
+    font-size: 1.15rem;
+}
+
+body:has(main > section) aside:first-of-type figcaption em {
+    font-style: normal;
+    font-size: 4rem;
+    line-height: 1;
+    margin-right: 0.35rem;
+}
+
+body:has(main > section) aside:nth-of-type(2) {
+    padding: 1rem;
+    border: 1px solid #e8c7a3;
+    background: #fffdf9;
+}
+
+body:has(main > section) aside:nth-of-type(2) h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    line-height: 1;
+    text-transform: lowercase;
+    font-weight: 400;
+}
+
+body:has(main > section) aside:nth-of-type(2) li {
+    margin-bottom: 0.4rem;
+}
+
+/* Desktop layout grid */
+@media (min-width: 850px) {
+    body:has(main > section) main {
+        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-areas:
+            "photo live"
+            "photo style"
+            "cover health";
+        column-gap: 2rem;
+        row-gap: 1.5rem;
+        align-items: start;
+    }
+
+    body:has(main > section) aside:first-of-type { grid-area: photo; }
+    body:has(main > section) aside:nth-of-type(2) { grid-area: cover; }
+    body:has(main > section) section:nth-of-type(1) { grid-area: live; }
+    body:has(main > section) section:nth-of-type(2) { grid-area: style; }
+    body:has(main > section) section:nth-of-type(3) { grid-area: health; }
+}
+
+
+/* Small screen cleanup */
+
+@media (max-width: 700px) {
+
+    /*Reduce padding on small screens */
+    #container {
+        padding: 1.25rem;
+    }
+
+    /* Shrink large headings */
+    body:has(main > article + article + aside + aside) header h1,
+    body:has(main > section) header h1 {
+        font-size: 3.25rem;
+    }
+
+    /* Reduce article title size */
+    body:has(main > article:only-child) article h2:first-of-type {
+        font-size: 2.6rem;
+    }
+}
